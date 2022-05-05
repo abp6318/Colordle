@@ -1,0 +1,51 @@
+
+.submissionColor{
+    width:160px;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+.submissionText{
+    /* width:max-content; */
+    text-align: center;
+    margin:auto;
+
+}
+
+/* *{
+    border:thin solid red;
+} */
+
+.text{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1{
+    font-size: 75px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+p{
+    font-size: 24px;
+    font-weight: 500;
+    width:475px;
+    margin:auto;
+    padding-bottom:20px;
+}
+
+body{
+    text-align: center;
+}
+
+#previousAnswers{
+    margin:auto;
+    margin-top:20px;
+    width:max-content;
+}
+
+select{
+    size: 50%;
+}
