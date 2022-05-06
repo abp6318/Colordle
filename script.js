@@ -282,12 +282,20 @@ document.getElementById("submitButton").addEventListener("click", function(){
         }
     }else if(rSelectValue > rAnswer){
         if(rClosestAbove > rSelectValue){
-            rClosestAbove = rSelectValue;
+            rClosestAbove = rSelectValue - 1;
         }
     } else {
         // answer is correct & only option is now the correct answer
         rClosestBelow = rSelectValue;
-        rClosestAbove = rSelectValue + 1;
+        rClosestAbove = rSelectValue;
+        document.getElementById("rSelect").disabled = true;
+        document.getElementById("rm100").disabled = true;
+        document.getElementById("rm10").disabled = true;
+        document.getElementById("rm1").disabled = true;
+        document.getElementById("ra1").disabled = true;
+        document.getElementById("ra10").disabled = true;
+        document.getElementById("ra100").disabled = true;
+
     }
 
     // gSelect
@@ -299,12 +307,19 @@ document.getElementById("submitButton").addEventListener("click", function(){
         }
     }else if(gSelectValue > gAnswer){
         if(gClosestAbove > gSelectValue){
-            gClosestAbove = gSelectValue;
+            gClosestAbove = gSelectValue - 1;
         }
     } else {
         // answer is correct & only option is now the correct answer
         gClosestBelow = gSelectValue;
-        gClosestAbove = gSelectValue + 1;
+        gClosestAbove = gSelectValue;
+        document.getElementById("gSelect").disabled = true;
+        document.getElementById("gm100").disabled = true;
+        document.getElementById("gm10").disabled = true;
+        document.getElementById("gm1").disabled = true;
+        document.getElementById("ga1").disabled = true;
+        document.getElementById("ga10").disabled = true;
+        document.getElementById("ga100").disabled = true;
     }
 
     // bSelect
@@ -316,12 +331,19 @@ document.getElementById("submitButton").addEventListener("click", function(){
         }
     }else if(bSelectValue > bAnswer){
         if(bClosestAbove > bSelectValue){
-            bClosestAbove = bSelectValue;
+            bClosestAbove = bSelectValue - 1;
         }
     } else {
         // answer is correct & only option is now the correct answer
         bClosestBelow = bSelectValue;
-        bClosestAbove = bSelectValue + 1;
+        bClosestAbove = bSelectValue;
+        document.getElementById("bSelect").disabled = true;
+        document.getElementById("bm100").disabled = true;
+        document.getElementById("bm10").disabled = true;
+        document.getElementById("bm1").disabled = true;
+        document.getElementById("ba1").disabled = true;
+        document.getElementById("ba10").disabled = true;
+        document.getElementById("ba100").disabled = true;
     }
 
     var submissionBlock = document.createElement("DIV");
