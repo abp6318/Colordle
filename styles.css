@@ -31,7 +31,8 @@ h1{
 p{
     font-size: 24px;
     font-weight: 500;
-    width:475px;
+    /* width:475px; */
+    max-width:825px;
     margin:auto;
     padding-bottom:20px;
 }
