@@ -347,8 +347,19 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("ba100").disabled = true;
     }
 
+    // disable form and display victory info
     if(rSelectValue == rAnswer && gSelectValue == gAnswer && bSelectValue == bAnswer){
         document.getElementById("submitButton").disabled = true;
+
+        var victory = document.createElement("DIV");
+        // victory.id = "victory";
+        victory.innerText = "You've done it! Shareable links and exports to be added soon.";
+        victory.style.textAlign = "center";
+        // victory.style.backgroundColor = "white";
+        victory.style.color = setContrast(rAnswer, gAnswer, bAnswer);
+        victory.classList = "text";
+        victory.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
+        document.body.insertBefore(victory, document.body.firstChild);
     }
 
     var submissionBlock = document.createElement("DIV");
