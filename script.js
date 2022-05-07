@@ -347,21 +347,6 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("ba100").disabled = true;
     }
 
-    // disable form and display victory info
-    if(rSelectValue == rAnswer && gSelectValue == gAnswer && bSelectValue == bAnswer){
-        document.getElementById("submitButton").disabled = true;
-
-        var victory = document.createElement("DIV");
-        // victory.id = "victory";
-        victory.innerText = "You've done it! Shareable links and exports to be added soon.";
-        victory.style.textAlign = "center";
-        // victory.style.backgroundColor = "white";
-        victory.style.color = setContrast(rAnswer, gAnswer, bAnswer);
-        victory.classList = "text";
-        victory.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
-        document.body.insertBefore(victory, document.body.firstChild);
-    }
-
     var submissionBlock = document.createElement("DIV");
     submissionBlock.className = "submissionBlock";
 
@@ -390,6 +375,40 @@ document.getElementById("submitButton").addEventListener("click", function(){
     // console.log(gClosestBelow);
     // console.log(bClosestAbove);
     // console.log(bClosestBelow);
+
+    // disable form and display victory info
+    if(rSelectValue == rAnswer && gSelectValue == gAnswer && bSelectValue == bAnswer){
+        document.getElementById("submitButton").disabled = true;
+
+        var victory = document.createElement("DIV");
+        // victory.id = "victory";
+        victory.innerText = "You've done it! Shareable links and exports to be added soon.";
+        victory.style.textAlign = "center";
+        // victory.style.backgroundColor = "white";
+        victory.style.color = setContrast(rAnswer, gAnswer, bAnswer);
+        victory.classList = "text";
+        victory.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
+        document.body.insertBefore(victory, document.body.firstChild);
+        document.getElementById("rSelectLabel").innerText = "Red ("+rAnswer+")";
+        document.getElementById("gSelectLabel").innerText = "Green ("+gAnswer+")";
+        document.getElementById("bSelectLabel").innerText = "Blue ("+bAnswer+")";
+    }else{
+        if(rSelectValue == rAnswer){
+            document.getElementById("rSelectLabel").innerText = "Red ("+rAnswer+")";
+        }else{
+            document.getElementById("rSelectLabel").innerText = "Red ("+rClosestBelow+" - "+rClosestAbove+")";
+        }
+        if(gSelectValue == gAnswer){
+            document.getElementById("gSelectLabel").innerText = "Green ("+gAnswer+")";
+        }else{
+            document.getElementById("gSelectLabel").innerText = "Green ("+gClosestBelow+" - "+gClosestAbove+")";
+        }
+        if(bSelectValue == bAnswer){
+            document.getElementById("bSelectLabel").innerText = "Blue ("+bAnswer+")";
+        }else{
+            document.getElementById("bSelectLabel").innerText = "Blue ("+bClosestBelow+" - "+bClosestAbove+")";
+        }
+    }
 });
 
 
@@ -402,7 +421,7 @@ document.body.append(previousAnswers);
 
 document.querySelectorAll(".text").forEach(element => {
     element.style.color = setContrast(rAnswer, gAnswer, bAnswer);
-    element.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
+    // element.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
 });
 
 function setContrast(rSelectValue, gSelectValue, bSelectValue) {
@@ -418,6 +437,22 @@ function setContrastReverse(rSelectValue, gSelectValue, bSelectValue) {
                         (gSelectValue * 587) +
                         (bSelectValue * 114)) / 1000);
     const textColour = (brightness > 125) ? 'white' : 'black';
+    return textColour;
+}
+
+function setContrastSubtext(rSelectValue, gSelectValue, bSelectValue) {
+    const brightness = Math.round(((rSelectValue * 299) +
+                        (gSelectValue * 587) +
+                        (bSelectValue * 114)) / 1000);
+    const textColour = (brightness > 125) ? 'darkgrey' : 'lightgrey';
+    return textColour;
+}
+
+function setContrastSubtextReverse(rSelectValue, gSelectValue, bSelectValue) {
+    const brightness = Math.round(((rSelectValue * 299) +
+                        (gSelectValue * 587) +
+                        (bSelectValue * 114)) / 1000);
+    const textColour = (brightness > 125) ? 'lightgrey' : 'darkgrey';
     return textColour;
 }
 
