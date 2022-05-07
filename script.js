@@ -1,18 +1,12 @@
-
 // generate answer values
 let rAnswer = Math.floor(Math.random() * 256);
 let gAnswer = Math.floor(Math.random() * 256);
 let bAnswer = Math.floor(Math.random() * 256);
-// console.log(rAnswer);
-// console.log(gAnswer);
-// console.log(bAnswer);
-// console.log("-------");
 
-var form = document.createElement("FORM");
-
+// set background color to answer values
 document.body.style.backgroundColor = "rgb(" + rAnswer + "," + gAnswer + "," + bAnswer + ")";
 
-// variables
+// assign closest above and below limits for selection
 let rClosestAbove = 255;
 let rClosestBelow = 0;
 let gClosestAbove = 255;
@@ -20,258 +14,222 @@ let gClosestBelow = 0;
 let bClosestAbove = 255;
 let bClosestBelow = 0;
 
-document.getElementById("rSelect").value = 0;
-document.getElementById("gSelect").value = 0;
-document.getElementById("bSelect").value = 0;
-
-document.getElementById("rSelect").min = 0;
-document.getElementById("gSelect").min = 0;
-document.getElementById("bSelect").min = 0;
-document.getElementById("rSelect").max = 255;
-document.getElementById("gSelect").max = 255;
-document.getElementById("bSelect").max = 255;
-
-function checkInputRed(e){
-    // console.log(e.value);
-    if(e.value < rClosestBelow){
-        e.value = rClosestBelow;
-    }
-    if(e.value > rClosestAbove){
-        e.value = rClosestAbove;
-    }
-}
-
-function checkInputGreen(e){
-    // console.log(e.value);
-    if(e.value < gClosestBelow){
-        e.value = gClosestBelow;
-    }
-    if(e.value > gClosestAbove){
-        e.value = gClosestAbove;
-    }
-}
-
-function checkInputBlue(e){
-    // console.log(e.value);
-    if(e.value < bClosestBelow){
-        e.value = bClosestBelow;
-    }
-    if(e.value > bClosestAbove){
-        e.value = bClosestAbove;
-    }
-}
+// reusable elements
+let ra1 = document.getElementById("ra1");
+let ra10 = document.getElementById("ra10");
+let ra100 = document.getElementById("ra100");
+let rm1 = document.getElementById("rm1");
+let rm10 = document.getElementById("rm10");
+let rm100 = document.getElementById("rm100");
+let rSelect = document.getElementById("rSelect");
 
 // onclicks for rSelect
-    document.getElementById("ra1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) + 1;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+ra1.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) + 1;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
-    document.getElementById("ra10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) + 10;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+ra10.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) + 10;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
-    document.getElementById("ra100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) + 100;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+ra100.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) + 100;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
-    document.getElementById("rm1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) - 1;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+rm1.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) - 1;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
-    document.getElementById("rm10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) - 10;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+rm10.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) - 10;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
-    document.getElementById("rm100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("rSelect").value) - 100;
-        if(temp < rClosestBelow){
-            temp = rClosestBelow;
-        }
-        if(temp > rClosestAbove){
-            temp = rClosestAbove;
-        }
-        document.getElementById("rSelect").value = temp; 
-    });
+rm100.addEventListener("click", function(){ 
+    let temp = parseInt(rSelect.value) - 100;
+    if(temp < rClosestBelow){
+        temp = rClosestBelow;
+    }
+    if(temp > rClosestAbove){
+        temp = rClosestAbove;
+    }
+    rSelect.value = temp; 
+});
 
 // onclicks for gSelect
-    document.getElementById("ga1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) + 1;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("ga1").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) + 1;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
-    document.getElementById("ga10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) + 10;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("ga10").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) + 10;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
-    document.getElementById("ga100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) + 100;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("ga100").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) + 100;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
-    document.getElementById("gm1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) - 1;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("gm1").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) - 1;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
-    document.getElementById("gm10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) - 10;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("gm10").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) - 10;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
-    document.getElementById("gm100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("gSelect").value) - 100;
-        if(temp < gClosestBelow){
-            temp = gClosestBelow;
-        }
-        if(temp > gClosestAbove){
-            temp = gClosestAbove;
-        }
-        document.getElementById("gSelect").value = temp; 
-    });
+document.getElementById("gm100").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("gSelect").value) - 100;
+    if(temp < gClosestBelow){
+        temp = gClosestBelow;
+    }
+    if(temp > gClosestAbove){
+        temp = gClosestAbove;
+    }
+    document.getElementById("gSelect").value = temp; 
+});
 
 // onclicks for bSelects
-    document.getElementById("ba1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) + 1;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("ba1").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) + 1;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
-    document.getElementById("ba10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) + 10;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("ba10").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) + 10;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
-    document.getElementById("ba100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) + 100;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("ba100").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) + 100;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
-    document.getElementById("bm1").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) - 1;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("bm1").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) - 1;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
-    document.getElementById("bm10").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) - 10;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("bm10").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) - 10;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
-    document.getElementById("bm100").addEventListener("click", function(){ 
-        let temp = parseInt(document.getElementById("bSelect").value) - 100;
-        if(temp < bClosestBelow){
-            temp = bClosestBelow;
-        }
-        if(temp > bClosestAbove){
-            temp = bClosestAbove;
-        }
-        document.getElementById("bSelect").value = temp; 
-    });
+document.getElementById("bm100").addEventListener("click", function(){ 
+    let temp = parseInt(document.getElementById("bSelect").value) - 100;
+    if(temp < bClosestBelow){
+        temp = bClosestBelow;
+    }
+    if(temp > bClosestAbove){
+        temp = bClosestAbove;
+    }
+    document.getElementById("bSelect").value = temp; 
+});
 
 
 // button onclick event
 document.getElementById("submitButton").addEventListener("click", function(){
-    // console.log("submit");
     let rSelectValue = parseInt(document.getElementById("rSelect").value);
     let gSelectValue = parseInt(document.getElementById("gSelect").value);
     let bSelectValue = parseInt(document.getElementById("bSelect").value);
-    // console.log(rSelectValue);
-    // console.log(gSelectValue);
-    // console.log(bSelectValue);
 
     // manage submissions
     // rSelect
@@ -293,10 +251,9 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("rm100").disabled = true;
         document.getElementById("rm10").disabled = true;
         document.getElementById("rm1").disabled = true;
-        document.getElementById("ra1").disabled = true;
-        document.getElementById("ra10").disabled = true;
+        ra1.disabled = true;
+        ra10.disabled = true;
         document.getElementById("ra100").disabled = true;
-
     }
 
     // gSelect
@@ -369,22 +326,14 @@ document.getElementById("submitButton").addEventListener("click", function(){
     document.getElementById("rSelect").value = rClosestBelow;
     document.getElementById("gSelect").value = gClosestBelow;
     document.getElementById("bSelect").value = bClosestBelow;
-    // console.log(rClosestAbove);
-    // console.log(rClosestBelow);
-    // console.log(gClosestAbove);
-    // console.log(gClosestBelow);
-    // console.log(bClosestAbove);
-    // console.log(bClosestBelow);
 
     // disable form and display victory info
     if(rSelectValue == rAnswer && gSelectValue == gAnswer && bSelectValue == bAnswer){
         document.getElementById("submitButton").disabled = true;
 
         var victory = document.createElement("DIV");
-        // victory.id = "victory";
         victory.innerText = "You've done it! Shareable links and exports to be added soon.";
         victory.style.textAlign = "center";
-        // victory.style.backgroundColor = "white";
         victory.style.color = setContrast(rAnswer, gAnswer, bAnswer);
         victory.classList = "text";
         victory.style.textShadow = "1px 0px " + setContrastReverse(rAnswer, gAnswer, bAnswer);
@@ -410,8 +359,6 @@ document.getElementById("submitButton").addEventListener("click", function(){
         }
     }
 });
-
-
 
 document.getElementById("form").addEventListener('submit', function(event) { event.preventDefault(); } );
 
@@ -440,47 +387,34 @@ function setContrastReverse(rSelectValue, gSelectValue, bSelectValue) {
     return textColour;
 }
 
-function setContrastSubtext(rSelectValue, gSelectValue, bSelectValue) {
-    const brightness = Math.round(((rSelectValue * 299) +
-                        (gSelectValue * 587) +
-                        (bSelectValue * 114)) / 1000);
-    const textColour = (brightness > 125) ? 'darkgrey' : 'lightgrey';
-    return textColour;
-}
-
-function setContrastSubtextReverse(rSelectValue, gSelectValue, bSelectValue) {
-    const brightness = Math.round(((rSelectValue * 299) +
-                        (gSelectValue * 587) +
-                        (bSelectValue * 114)) / 1000);
-    const textColour = (brightness > 125) ? 'lightgrey' : 'darkgrey';
-    return textColour;
-}
-
-
-function emptySelects(){
-    var rSelect = document.getElementById("rSelect");
-    var length = rSelect.options.length;
-    for (i = length-1; i >= 0; i--) {
-        rSelect.options[i] = null;
+// confirm/adjust value of red to be between upper and lower limits
+function checkInputRed(e){
+    if(e.value < rClosestBelow){
+        e.value = rClosestBelow;
     }
-    var gSelect = document.getElementById("gSelect");
-    var length = gSelect.options.length;
-    for (i = length-1; i >= 0; i--) {
-        gSelect.options[i] = null;
-    }
-    var bSelect = document.getElementById("bSelect");
-    var length = bSelect.options.length;
-    for (i = length-1; i >= 0; i--) {
-        bSelect.options[i] = null;
+    if(e.value > rClosestAbove){
+        e.value = rClosestAbove;
     }
 }
 
-function loadSelectOptions(selectObject, min, max){
-    for(let index=min; index<max; index++){
-        let option = document.createElement("OPTION");
-        option.nodeValue = index;
-        option.innerText = index;
-        selectObject.appendChild(option);
+// confirm/adjust value of green to be between upper and lower limits
+function checkInputGreen(e){
+    if(e.value < gClosestBelow){
+        e.value = gClosestBelow;
+    }
+    if(e.value > gClosestAbove){
+        e.value = gClosestAbove;
+    }
+}
+
+// confirm/adjust value of blue to be between upper and lower limits
+function checkInputBlue(e){
+    // console.log(e.value);
+    if(e.value < bClosestBelow){
+        e.value = bClosestBelow;
+    }
+    if(e.value > bClosestAbove){
+        e.value = bClosestAbove;
     }
 }
 

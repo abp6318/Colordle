@@ -12,15 +12,15 @@
 </head>
 <body>
 
-   <h1 class="text">Colordle</h1> 
-   <p class="text">Guess the background color by changing the red, green, and blue values. Each guess will automatically narrow down your remaining values.</p>
+    <h1 class="text">Colordle</h1> 
+    <p class="text">Guess the background color by changing the red, green, and blue values. Each guess will automatically narrow down your remaining values.</p>
     <form id="form">
         <label for="rSelect" id="rSelectLabel" class="text">Red (0 - 255)</label><br>
-        <button id="rm100">-100</button> <button id="rm10">-10</button> <button id="rm1">-1</button> <input type="number" name="rSelect" id="rSelect" maxlength="3" onchange="checkInputRed(this);"> <button id="ra1">+1</button> <button id="ra10">+10</button> <button id="ra100">+100</button><br/>
+        <button id="rm100">-100</button> <button id="rm10">-10</button> <button id="rm1">-1</button> <input type="number" name="rSelect" id="rSelect" maxlength="3" onchange="checkInputRed(this);" value="0" min="0" max="255"> <button id="ra1">+1</button> <button id="ra10">+10</button> <button id="ra100">+100</button><br/>
         <label for="rSelect" id="gSelectLabel" class="text">Green (0 - 255)</label><br>
-        <button id="gm100">-100</button> <button id="gm10">-10</button> <button id="gm1">-1</button> <input type="number" name="gSelect" id="gSelect" maxlength="3" onchange="checkInputGreen(this);"> <button id="ga1">+1</button> <button id="ga10">+10</button> <button id="ga100">+100</button><br/>
+        <button id="gm100">-100</button> <button id="gm10">-10</button> <button id="gm1">-1</button> <input type="number" name="gSelect" id="gSelect" maxlength="3" onchange="checkInputGreen(this);" value="0" min="0" max="255"> <button id="ga1">+1</button> <button id="ga10">+10</button> <button id="ga100">+100</button><br/>
         <label for="rSelect" id="bSelectLabel" class="text">Blue (0 - 255)</label><br>
-        <button id="bm100">-100</button> <button id="bm10">-10</button> <button id="bm1">-1</button> <input type="number" name="bSelect" id="bSelect" maxlength="3" onchange="checkInputBlue(this);"> <button id="ba1">+1</button> <button id="ba10">+10</button> <button id="ba100">+100</button><br/>
+        <button id="bm100">-100</button> <button id="bm10">-10</button> <button id="bm1">-1</button> <input type="number" name="bSelect" id="bSelect" maxlength="3" onchange="checkInputBlue(this);" value="0" min="0" max="255"> <button id="ba1">+1</button> <button id="ba10">+10</button> <button id="ba100">+100</button><br/>
         <input type="button" value="Guess Color" id="submitButton">
     </form>
 
