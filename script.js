@@ -1,7 +1,20 @@
-// generate answer values
-let rAnswer = Math.floor(Math.random() * 256);
-let gAnswer = Math.floor(Math.random() * 256);
-let bAnswer = Math.floor(Math.random() * 256);
+let rAnswer;
+let gAnswer;
+let bAnswer;
+if (localStorage.getItem("rAnswer") === null && localStorage.getItem("gAnswer") === null && localStorage.getItem("bAnswer") === null) {
+    // generate answer values
+    rAnswer = Math.floor(Math.random() * 256);
+    gAnswer = Math.floor(Math.random() * 256);
+    bAnswer = Math.floor(Math.random() * 256);
+    localStorage.setItem("rAnswer", rAnswer);
+    localStorage.setItem("gAnswer", gAnswer);
+    localStorage.setItem("bAnswer", bAnswer);
+} else {
+    // get answer values
+    rAnswer = localStorage.getItem("rAnswer");
+    gAnswer = localStorage.getItem("gAnswer");
+    bAnswer = localStorage.getItem("bAnswer");
+}
 
 // set background color to answer values
 document.body.style.backgroundColor = "rgb(" + rAnswer + "," + gAnswer + "," + bAnswer + ")";
