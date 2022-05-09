@@ -52,6 +52,29 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+button{
+    padding:5px 10px;
+    text-decoration: none;
+    border: none;
+    margin:0;
+    box-shadow: 1px 1px rgb(223, 223, 223);
+
+}
+
+.colorRow{
+    background-color: white;
+    padding:7px 20px;
+    width: max-content;
+    border-radius: 20px;
+    margin:auto;
+    margin-bottom:10px;
+    margin-top:2px;
+}
+
+input{
+    border:none;
+}
+
 /* IDs */
 #previousAnswers{
     margin:auto;
