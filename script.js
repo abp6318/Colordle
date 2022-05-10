@@ -9,7 +9,7 @@ if (localStorage.getItem("colordle") === null) {
         gClosestBelow: 0,
         bClosestAbove: 255,
         bClosestBelow: 0,
-        guess: []
+        guesses: []
     }
     
     // generate answer values
@@ -20,6 +20,28 @@ if (localStorage.getItem("colordle") === null) {
 } else {
     // get answer values
     var colordle = JSON.parse(localStorage.getItem("colordle"));
+
+    colordle.guesses.forEach(element => {
+        var submissionBlock = document.createElement("DIV");
+        submissionBlock.className = "submissionBlock";
+
+        var submissionColor = document.createElement("DIV");
+        submissionColor.className = "submissionColor";
+        submissionColor.style.backgroundColor = "rgb(" + element.r + "," + element.g + "," + element.b + ")";
+
+        var submissionText = document.createElement("DIV");
+        submissionText.className = "submissionText";
+        submissionText.innerText = "r: " + element.r + "; g: " + element.g + "; b: " + element.b;
+        submissionText.style.color = setContrast(element.r, element.g, element.b);
+
+        colordle.guesses.push({ "r": element.r, "g": element.g, "b": element.g });
+
+        submissionColor.appendChild(submissionText);
+
+        submissionBlock.appendChild(submissionColor);
+        
+        document.getElementById("previousAnswers").insertBefore(submissionBlock, document.getElementById("previousAnswers").firstChild);
+    });
 }
 
 console.log(colordle);
@@ -350,6 +372,8 @@ document.getElementById("submitButton").addEventListener("click", function(){
     submissionText.innerText = "r: " + rSelectValue + "; g: " + gSelectValue + "; b: " + bSelectValue;
     submissionText.style.color = setContrast(rSelectValue, gSelectValue, bSelectValue);
 
+    colordle.guesses.push({ "r": rSelectValue, "g": gSelectValue, "b": bSelectValue });
+
     submissionColor.appendChild(submissionText);
 
     submissionBlock.appendChild(submissionColor);
@@ -397,9 +421,9 @@ document.getElementById("submitButton").addEventListener("click", function(){
 
 document.getElementById("form").addEventListener('submit', function(event) { event.preventDefault(); } );
 
-var previousAnswers = document.createElement("DIV");
-previousAnswers.id = "previousAnswers";
-document.body.append(previousAnswers);
+// var previousAnswers = document.createElement("DIV");
+// previousAnswers.id = "previousAnswers";
+// document.body.append(previousAnswers);
 
 document.querySelectorAll(".text").forEach(element => {
     element.style.color = setContrast(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
@@ -452,12 +476,3 @@ function checkInputBlue(e){
         e.value = colordle.bClosestAbove;
     }
 }
-
-
-
-
-
-
-
-
-
