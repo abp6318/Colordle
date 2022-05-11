@@ -50,18 +50,51 @@ document.getElementById("bSelect").value = colordle.bClosestBelow;
 
 if(colordle.rClosestAbove == colordle.rAnswer){
     document.getElementById("rSelectLabel").innerText = "Red ("+colordle.rAnswer+")";
+    document.getElementById("rSelect").disabled = true;
+    document.getElementById("rm100").disabled = true;
+    document.getElementById("rm10").disabled = true;
+    document.getElementById("rm1").disabled = true;
+    document.getElementById("ra1").disabled = true;
+    document.getElementById("ra10").disabled = true;
+    document.getElementById("ra100").disabled = true;
 }else{
     document.getElementById("rSelectLabel").innerText = "Red ("+colordle.rClosestBelow+" - "+colordle.rClosestAbove+")";
 }
 if(colordle.gClosestAbove == colordle.gAnswer){
     document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gAnswer+")";
+    document.getElementById("gSelect").disabled = true;
+    document.getElementById("gm100").disabled = true;
+    document.getElementById("gm10").disabled = true;
+    document.getElementById("gm1").disabled = true;
+    document.getElementById("ga1").disabled = true;
+    document.getElementById("ga10").disabled = true;
+    document.getElementById("ga100").disabled = true;
 }else{
     document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gClosestBelow+" - "+colordle.gClosestAbove+")";
 }
 if(colordle.bClosestAbove == colordle.bAnswer){
     document.getElementById("bSelectLabel").innerText = "Blue ("+colordle.bAnswer+")";
+    document.getElementById("bSelect").disabled = true;
+    document.getElementById("bm100").disabled = true;
+    document.getElementById("bm10").disabled = true;
+    document.getElementById("bm1").disabled = true;
+    document.getElementById("ba1").disabled = true;
+    document.getElementById("ba10").disabled = true;
+    document.getElementById("ba100").disabled = true;
 }else{
     document.getElementById("bSelectLabel").innerText = "Blue ("+colordle.bClosestBelow+" - "+colordle.bClosestAbove+")";
+}
+
+if(colordle.rClosestAbove == colordle.rAnswer && colordle.gClosestAbove == colordle.gAnswer && colordle.bClosestAbove == colordle.bAnswer){
+    document.getElementById("submitButton").disabled = true;
+
+    var victory = document.createElement("DIV");
+    victory.innerText = "You've done it! Shareable links and exports to be added soon.";
+    victory.style.textAlign = "center";
+    victory.style.color = setContrast(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
+    victory.classList = "text";
+    // victory.style.textShadow = "1px 0px " + setContrastReverse(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
+    document.body.insertBefore(victory, document.body.firstChild);
 }
 
 // set background color to answer values

@@ -76,7 +76,7 @@ button:active {
     margin-top:2px;
 }
 
-#submitButton{
+#submitButton, #newGameButton{
     padding:7px 20px;
     border-radius: 20px;
 }
@@ -91,4 +91,3 @@ input{
     margin-top:20px;
     width:max-content;
 }
-

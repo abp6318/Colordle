@@ -320,7 +320,7 @@ document.getElementById("submitButton").addEventListener("click", function(){
         victory.style.textAlign = "center";
         victory.style.color = setContrast(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
         victory.classList = "text";
-        victory.style.textShadow = "1px 0px " + setContrastReverse(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
+        // victory.style.textShadow = "1px 0px " + setContrastReverse(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
         document.body.insertBefore(victory, document.body.firstChild);
         document.getElementById("rSelectLabel").innerText = "Red ("+colordle.rAnswer+")";
         document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gAnswer+")";
@@ -346,3 +346,11 @@ document.getElementById("submitButton").addEventListener("click", function(){
 });
 
 document.getElementById("form").addEventListener('submit', function(event) { event.preventDefault(); } );
+
+
+document.getElementById("newGameButton").addEventListener("click", function(){ 
+    if(localStorage.getItem("colordle") !== null) {
+        localStorage.removeItem("colordle");
+    }
+    location.reload();
+});
