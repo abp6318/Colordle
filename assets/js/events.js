@@ -9,210 +9,306 @@ let rSelect = document.getElementById("rSelect");
 
 // onclicks for rSelect
 ra1.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) + 1;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) + 1;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
     }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
 });
 
 ra10.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) + 10;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
-    }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) + 10;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
+    } 
 });
 
 ra100.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) + 100;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
-    }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) + 100;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
+    } 
 });
 
 rm1.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) - 1;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
-    }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) - 1;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
+    } 
 });
 
 rm10.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) - 10;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) - 10;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
     }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
 });
 
 rm100.addEventListener("click", function(){ 
-    let temp = parseInt(rSelect.value) - 100;
-    if(temp < colordle.rClosestBelow){
-        temp = colordle.rClosestBelow;
-    }
-    if(temp > colordle.rClosestAbove){
-        temp = colordle.rClosestAbove;
-    }
-    rSelect.value = temp; 
+    if(rSelect.value.length == 0){
+        rSelect.value = colordle.rClosestBelow
+    }else{
+        let temp = parseInt(rSelect.value) - 100;
+        if(temp < colordle.rClosestBelow){
+            temp = colordle.rClosestBelow;
+        }
+        if(temp > colordle.rClosestAbove){
+            temp = colordle.rClosestAbove;
+        }
+        rSelect.value = temp; 
+    } 
 });
 
 // onclicks for gSelect
 document.getElementById("ga1").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) + 1;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) + 1;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    }  
 });
 
 document.getElementById("ga10").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) + 10;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) + 10;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    }  
 });
 
 document.getElementById("ga100").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) + 100;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) + 100;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    }  
 });
 
 document.getElementById("gm1").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) - 1;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) - 1;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    } 
 });
 
 document.getElementById("gm10").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) - 10;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) - 10;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    }  
 });
 
 document.getElementById("gm100").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("gSelect").value) - 100;
-    if(temp < colordle.gClosestBelow){
-        temp = colordle.gClosestBelow;
-    }
-    if(temp > colordle.gClosestAbove){
-        temp = colordle.gClosestAbove;
-    }
-    document.getElementById("gSelect").value = temp; 
+    if(gSelect.value.length == 0){
+        gSelect.value = colordle.gClosestBelow
+    }else{
+        let temp = parseInt(gSelect.value) - 100;
+        if(temp < colordle.gClosestBelow){
+            temp = colordle.gClosestBelow;
+        }
+        if(temp > colordle.gClosestAbove){
+            temp = colordle.gClosestAbove;
+        }
+        gSelect.value = temp; 
+    } 
 });
 
 // onclicks for bSelects
 document.getElementById("ba1").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) + 1;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) + 1;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    } 
 });
 
 document.getElementById("ba10").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) + 10;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) + 10;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    }  
 });
 
 document.getElementById("ba100").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) + 100;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) + 100;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    }  
 });
 
 document.getElementById("bm1").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) - 1;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) - 1;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    }  
 });
 
 document.getElementById("bm10").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) - 10;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) - 10;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    }  
 });
 
 document.getElementById("bm100").addEventListener("click", function(){ 
-    let temp = parseInt(document.getElementById("bSelect").value) - 100;
-    if(temp < colordle.bClosestBelow){
-        temp = colordle.bClosestBelow;
-    }
-    if(temp > colordle.bClosestAbove){
-        temp = colordle.bClosestAbove;
-    }
-    document.getElementById("bSelect").value = temp; 
+    if(bSelect.value.length == 0){
+        bSelect.value = colordle.bClosestBelow
+    }else{
+        let temp = parseInt(bSelect.value) - 100;
+        if(temp < colordle.bClosestBelow){
+            temp = colordle.bClosestBelow;
+        }
+        if(temp > colordle.bClosestAbove){
+            temp = colordle.bClosestAbove;
+        }
+        bSelect.value = temp; 
+    }  
 });
 
 // button onclick event
 document.getElementById("submitButton").addEventListener("click", function(){
-    let rSelectValue = parseInt(document.getElementById("rSelect").value);
-    let gSelectValue = parseInt(document.getElementById("gSelect").value);
-    let bSelectValue = parseInt(document.getElementById("bSelect").value);
+    let rSelectValueTemp = document.getElementById("rSelect").value;
+    let gSelectValueTemp = document.getElementById("gSelect").value;
+    let bSelectValueTemp = document.getElementById("bSelect").value;
+    let rSelectValue;
+    let gSelectValue;
+    let bSelectValue;
+
+    // check if rSelect is empty
+    if(rSelectValueTemp.length == 0){
+        rSelectValue = colordle.rClosestBelow;
+    }else{
+        rSelectValue = parseInt(rSelectValueTemp);
+    }
+
+    // check if gSelect is empty
+    if(gSelectValueTemp.length == 0){
+        gSelectValue = colordle.gClosestBelow;
+    }else{
+        gSelectValue = parseInt(gSelectValueTemp);
+    }
+
+    // check if bSelect is empty
+    if(bSelectValueTemp.length == 0){
+        bSelectValue = colordle.bClosestBelow;
+    }else{
+        bSelectValue = parseInt(bSelectValueTemp);
+    }
 
     // manage submissions
     // rSelect
