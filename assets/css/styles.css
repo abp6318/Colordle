@@ -17,6 +17,16 @@
     font-family: 'Quicksand', sans-serif;
 }
 
+.colorRow{
+    background-color: white;
+    padding:7px 20px;
+    width: max-content;
+    border-radius: 20px;
+    margin:auto;
+    margin-bottom:10px;
+    margin-top:2px;
+}
+
 /* Elements */
 h1{
     font-size: 75px;
@@ -34,6 +44,10 @@ p{
 
 body{
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 0;
 }
 
 select{
@@ -66,23 +80,17 @@ button:active {
     transform: translateX(1px) translateY(1px);
 }
 
-.colorRow{
-    background-color: white;
-    padding:7px 20px;
-    width: max-content;
-    border-radius: 20px;
-    margin:auto;
-    margin-bottom:10px;
-    margin-top:2px;
-}
-
-#submitButton, #newGameButton{
-    padding:7px 20px;
-    border-radius: 20px;
-}
-
 input{
     border:none;
+}
+
+footer{
+    height:50px;
+    margin-top: auto;
+    margin-left: 0px;
+    left:0;
+    bottom:0;
+    padding-top: 20px;
 }
 
 /* IDs */
@@ -90,4 +98,15 @@ input{
     margin:auto;
     margin-top:20px;
     width:max-content;
+}
+
+#submitButton, #newGameButton{
+    padding:7px 20px;
+    border-radius: 20px;
+}
+
+#container{
+    min-height: 100%;
+    overflow: auto;
+    padding: 0 2em;
 }
