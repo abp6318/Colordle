@@ -34,8 +34,6 @@ if (localStorage.getItem("colordle") === null) {
         submissionText.innerText = "r: " + element.r + "; g: " + element.g + "; b: " + element.b;
         submissionText.style.color = setContrast(element.r, element.g, element.b);
 
-        colordle.guesses.push({ "r": element.r, "g": element.g, "b": element.g });
-
         submissionColor.appendChild(submissionText);
 
         submissionBlock.appendChild(submissionColor);
@@ -89,7 +87,7 @@ if(colordle.rClosestAbove == colordle.rAnswer && colordle.gClosestAbove == color
     document.getElementById("submitButton").disabled = true;
 
     var victory = document.createElement("DIV");
-    victory.innerText = "You've done it! Shareable links and exports to be added soon.";
+    victory.innerText = "You've done it! Shareable links and exports to be added soon. It took you " + colordle.guesses.length + " guesses.";
     victory.style.textAlign = "center";
     victory.style.color = setContrast(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
     victory.classList = "text";

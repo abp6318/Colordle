@@ -412,7 +412,7 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("submitButton").disabled = true;
 
         var victory = document.createElement("DIV");
-        victory.innerText = "You've done it! Shareable links and exports to be added soon.";
+        victory.innerText = "You've done it! Shareable links and exports to be added soon. It took you " + colordle.guesses.length + " guesses.";
         victory.style.textAlign = "center";
         victory.style.color = setContrast(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
         victory.classList = "text";
