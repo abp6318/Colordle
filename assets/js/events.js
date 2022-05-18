@@ -421,6 +421,27 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("rSelectLabel").innerText = "Red ("+colordle.rAnswer+")";
         document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gAnswer+")";
         document.getElementById("bSelectLabel").innerText = "Blue ("+colordle.bAnswer+")";
+
+        // var c = document.getElementById("myCanvas");
+        // var ctx = c.getContext("2d");
+        // ctx.beginPath();
+        // ctx.fillStyle = "green";
+        // ctx.fillRect(0, 0, 300, 10);
+        // ctx.stroke();
+
+        /**
+         * 
+         * upon winning...
+         * get length of guesses
+         * height of individual box = 400 / # of guess
+         * width of individual box = 300
+         * foreach guess
+         *      ...fillStyle = rgb(...);
+         *      ...fillRect = (0, (index)*(height of individual box), 300, (height of individual box));
+         * 
+         * 
+         */
+
     }else{
         if(rSelectValue == colordle.rAnswer){
             document.getElementById("rSelectLabel").innerText = "Red ("+colordle.rAnswer+")";
