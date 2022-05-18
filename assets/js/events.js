@@ -422,13 +422,20 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gAnswer+")";
         document.getElementById("bSelectLabel").innerText = "Blue ("+colordle.bAnswer+")";
 
-        // var c = document.getElementById("myCanvas");
-        // var ctx = c.getContext("2d");
-        // ctx.beginPath();
-        // ctx.fillStyle = "green";
-        // ctx.fillRect(0, 0, 300, 10);
-        // ctx.stroke();
-
+        var c = document.getElementById("myCanvas");
+        c.width = 300;
+        c.height = 400;
+        c.style.width  = '300px';
+        c.style.height = '400px';
+        var ctx = c.getContext("2d");
+        ctx.beginPath();
+        var tempH = 400 / colordle.guesses.length;
+        for(var index = 0; index<colordle.guesses.length; index++){
+            ctx.fillStyle = "rgb(" + colordle.guesses[index].r + "," + colordle.guesses[index].g + "," + colordle.guesses[index].b + ")";
+            ctx.fillRect(0, index*tempH, 300, tempH);
+            ctx.stroke();
+        }
+        
         /**
          * 
          * upon winning...
@@ -438,7 +445,6 @@ document.getElementById("submitButton").addEventListener("click", function(){
          * foreach guess
          *      ...fillStyle = rgb(...);
          *      ...fillRect = (0, (index)*(height of individual box), 300, (height of individual box));
-         * 
          * 
          */
 
