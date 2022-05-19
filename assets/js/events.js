@@ -422,19 +422,28 @@ document.getElementById("submitButton").addEventListener("click", function(){
         document.getElementById("gSelectLabel").innerText = "Green ("+colordle.gAnswer+")";
         document.getElementById("bSelectLabel").innerText = "Blue ("+colordle.bAnswer+")";
 
-        var c = document.getElementById("myCanvas");
+        var c = document.createElement("CANVAS");
         c.width = 300;
         c.height = 400;
         c.style.width  = '300px';
         c.style.height = '400px';
         var ctx = c.getContext("2d");
         ctx.beginPath();
-        var tempH = 400 / colordle.guesses.length;
+        ctx.lineWidth = 0;
+        // var tempH = 400 / colordle.guesses.length;
+        var tempH = 10;
         for(var index = 0; index<colordle.guesses.length; index++){
-            ctx.fillStyle = "rgb(" + colordle.guesses[index].r + "," + colordle.guesses[index].g + "," + colordle.guesses[index].b + ")";
+            ctx.fillStyle = "rgb(" + colordle.guesses[colordle.guesses.length - index - 1].r + "," + colordle.guesses[colordle.guesses.length - index - 1].g + "," + colordle.guesses[colordle.guesses.length - index - 1].b + ")";
             ctx.fillRect(0, index*tempH, 300, tempH);
             ctx.stroke();
         }
+
+        var image = document.createElement("IMG");
+        image.src = c.toDataURL('image/png');
+        image.width = 300;
+        image.height = 400;
+        image.style.objectFit = 'fill';
+        document.body.appendChild(image);
         
         /**
          * 

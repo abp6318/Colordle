@@ -93,6 +93,31 @@ if(colordle.rClosestAbove == colordle.rAnswer && colordle.gClosestAbove == color
     victory.classList = "text";
     // victory.style.textShadow = "1px 0px " + setContrastReverse(colordle.rAnswer, colordle.gAnswer, colordle.bAnswer);
     document.body.insertBefore(victory, document.body.firstChild);
+
+    // beginning of canvas chunk
+    var c = document.createElement("CANVAS");
+    c.width = 300;
+    c.height = 400;
+    c.style.width  = '300px';
+    c.style.height = '400px';
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.lineWidth = 0;
+    // var tempH = 400 / colordle.guesses.length;
+    var tempH = 10;
+    for(var index = 0; index<colordle.guesses.length; index++){
+        ctx.fillStyle = "rgb(" + colordle.guesses[colordle.guesses.length - index - 1].r + "," + colordle.guesses[colordle.guesses.length - index - 1].g + "," + colordle.guesses[colordle.guesses.length - index - 1].b + ")";
+        ctx.fillRect(0, index*tempH, 300, tempH);
+        ctx.stroke();
+    }
+
+    var image = document.createElement("IMG");
+    image.src = c.toDataURL('image/png');
+    image.width = 300;
+    image.height = 400;
+    image.style.objectFit = 'fill';
+    document.body.appendChild(image);
+    // ending of canvas chunk
 }
 
 // set background color to answer values
